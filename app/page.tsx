@@ -2,12 +2,20 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { DollarSign, Users, ShoppingCart, Percent, MessageCircle, Mail, PlusSquare, Phone } from "lucide-react"
 
-// Placeholder chart component
-const Chart = ({ type, data }) => (
+interface ChartProps {
+  type: string; // Adjust this type based on what `type` should be
+  data: any[];  // You can change this to a more specific type if needed
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Chart: React.FC<ChartProps> = ({ type, data }) => (
   <div className="h-[200px] w-full bg-muted flex items-center justify-center">
     <span className="text-muted-foreground">{type} Chart Placeholder</span>
+    {/* Example usage */}
+    {data.length > 0 ? <span>Data is available</span> : <span>.</span>}
   </div>
-)
+);
+
 
 export default function SalesDashboard() {
   return (
